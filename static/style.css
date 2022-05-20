@@ -1,0 +1,43 @@
+/* 实例css样式 */
+body {
+    margin: auto;
+    max-width: 580px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 页脚 */
+footer {
+    color: #888;
+    margin-top: 15px;
+    text-align: center;
+    padding: 10px;
+}
+
+/* 头像 */
+.avatar {
+    width: 40px;
+}
+
+.movie-list li {
+    padding: 12px 24px;
+    border-bottom: 1px solid #ddd;
+}
+
+.movie-list li:last-child
+{
+    border-bottom: none;
+}
+
+.movie-list li:hover{
+    background-color: #f8f9fa;
+}
+
+/* 龙猫图片 */
+/* 带.的元素为clas属性的元素 */
+.totoro {
+    display: block;
+    margin: 0 auto;
+    height: 100px;
+}
+

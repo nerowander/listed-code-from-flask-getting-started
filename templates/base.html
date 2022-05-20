@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--基模板——涉及模板的继承-->
+<html lang="en">
+<head>
+    {% block head %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--meta标签中的viewport可以让页面根据设备的宽度来自动缩放页面-->
+    <!--貌似是增强了在不同设备的适配性-->
+    <title>{{ user.name }}'s Watchlist</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='style_base.css') }}" type="text/css" >
+    {% endblock %}
+</head>
+<body>
+    {% for message in get_flashed_messages() %}
+        <div class="alert">{{ message }}</div>
+    {% endfor %} 
+    <h2>
+        <img alt = "Avatar" class="avatar" src="{{ url_for('static',filename='images/avatar.png') }}" >
+        {{ user.name }}'s Watchlist
+    </h2>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+        </ul>
+    </nav>
+    <!--上述nav定义了一个导航栏-->
+    {% block content %}{% endblock %}
+    <footer>
+        <small>&copy; 2018 <a href="http://helloflask.com/tutorial">HelloFlask</a></small>
+    </footer>
+</body>
+</html>
